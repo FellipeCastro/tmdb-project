@@ -2,9 +2,11 @@
 
 :root {
   --white: #fff;
+  --black: #000;
   --navbar-color: #0f172a;
   --bg-color: #020617;
   --star-color: #eaec04;
+  --btn-color: #6a0dad;
 }
 
 * {
@@ -12,4 +14,15 @@
   padding: 0;
   box-sizing: border-box; 
   font-family: "Montserrat", serif;
+}
+
+body {
+  background-color: var(--bg-color);
+}
+
+.moviesContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 2rem;
 }

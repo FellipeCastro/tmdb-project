@@ -1,0 +1,6 @@
+.navbar {
+    width: 100%;
+    padding: 1rem 5%;
+    background-color: var(--navbar-color);
+    color: var(--white);
+}
