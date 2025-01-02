@@ -17,7 +17,7 @@ function MovieCard({ img, name, rating, description }) {
             <div className={styles.movieInfo}>
                 <h2>{name}</h2>
                 <span>
-                    <FaStar /> {rating}
+                    <FaStar /> {rating.toFixed(1)}
                 </span>
                 <div className={styles.hiddenContent}>
                     <p>{truncateDescription(description, 20)}</p>

@@ -26,3 +26,23 @@ body {
   gap: 1rem;
   padding: 2rem;
 }
+
+button {
+  display: block;
+  margin: 1rem auto;
+  padding: 0.6rem 1rem;
+  background-color: var(--btn-color);
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.loading {
+  width: 100%;
+  text-align: center;
+  color: #eee;
+  font-weight: bold;
+}
