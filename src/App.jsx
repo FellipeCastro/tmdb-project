@@ -58,7 +58,7 @@ function App() {
                 </div>
             )}
             {!isLoading && (
-                <button onClick={loadMoreMovies} style={{ margin: "20px auto", display: "block" }}>
+                <button onClick={loadMoreMovies}>
                     Carregar Mais
                 </button>
             )}
