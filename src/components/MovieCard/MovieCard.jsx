@@ -11,7 +11,7 @@ function MovieCard({ img, name, rating, description }) {
         return text;
     };
 
-    return (
+    return img, name, rating, description ? (
         <div className={styles.card}>
             <img src={img} alt={name} />
             <div className={styles.movieInfo}>
@@ -25,7 +25,7 @@ function MovieCard({ img, name, rating, description }) {
                 </div>
             </div>
         </div>
-    );
+    ) : null;
 }
 
 export default MovieCard;

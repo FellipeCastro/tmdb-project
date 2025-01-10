@@ -19,7 +19,7 @@ function App() {
 
     useEffect(() => {
         const fetchMovies = async () => {
-            setIsLoading(true); // Ativa o loading
+            setIsLoading(true); 
             try {
                 const response = await fetch(url, options);
                 const data = await response.json();
@@ -27,7 +27,7 @@ function App() {
             } catch (error) {
                 console.error(error);
             } finally {
-                setIsLoading(false); // Desativa o loading
+                setIsLoading(false); 
             }
         };
 
@@ -48,7 +48,7 @@ function App() {
                         img={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                         name={movie.title}
                         rating={movie.vote_average}
-                        description={movie.overview || "Esse filme não tem uma descrição."}
+                        description={movie.overview}
                     />
                 ))}
             </div>

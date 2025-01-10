@@ -52,7 +52,7 @@
 
         p {
             font-size: 0.8rem;
-            margin-bottom: 1rem;
+            margin-bottom: 0.6rem;
         }
 
         button {
@@ -77,7 +77,7 @@
 
         .hiddenContent {
             opacity: 1;
-            height: 150px;
+            height: 130px;
         }
     }
 }
