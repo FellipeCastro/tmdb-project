@@ -2,9 +2,18 @@ import styles from "./Navbar.module.css";
 
 function Navbar() {
     return (
-        <header className={styles.navbar}>
+        <nav className={styles.navbar}>
             <h1>Filmes</h1>
-        </header>
+
+            <input
+                type="text"
+                name="search"
+                id="search"
+                placeholder="Pesquise por um filme"
+                autoComplete="off"
+                className={styles.input}
+            />
+        </nav>
     );
 }
 

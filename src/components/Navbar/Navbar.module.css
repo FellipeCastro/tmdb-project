@@ -3,4 +3,14 @@
     padding: 1rem 5%;
     background-color: var(--navbar-color);
     color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.input {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.2rem;
+    outline: none;
 }

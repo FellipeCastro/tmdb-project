@@ -1,41 +1,26 @@
 import { useEffect, useState } from "react";
+import axios from "axios";
 import Navbar from "./components/Navbar/Navbar";
 import MovieCard from "./components/MovieCard/MovieCard";
 
 function App() {
     const [movies, setMovies] = useState([]);
-    const [page, setPage] = useState(1); // Controla a página
-    const [isLoading, setIsLoading] = useState(false); // Controla o loading
-
-    const url = `https://api.themoviedb.org/3/discover/movie?&language=pt-BR&page=${page}`;
-    const options = {
-        method: "GET",
-        headers: {
-            accept: "application/json",
-            Authorization:
-                "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1MTUxNTA4ZmMwNGE5NjZmMzBkMmU2NTMxNzMzMDQwOSIsIm5iZiI6MTcwNzUxMTg1NS45NjcsInN1YiI6IjY1YzY5MDJmYWFkOWMyMDE3ZGI1NGJiYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Jxhh67fJy7xJDZD3HHMRq52AlUtZkj19C6pxFqV4xrw",
-        },
-    };
 
     useEffect(() => {
-        const fetchMovies = async () => {
-            setIsLoading(true); 
-            try {
-                const response = await fetch(url, options);
-                const data = await response.json();
-                setMovies((prevMovies) => [...prevMovies, ...data.results]);
-            } catch (error) {
-                console.error(error);
-            } finally {
-                setIsLoading(false); 
-            }
-        };
+        getMovies();
+    }, []);
 
-        fetchMovies();
-    }, [page]);
-
-    const loadMoreMovies = () => {
-        setPage((prevPage) => prevPage + 1);
+    const getMovies = () => {
+        axios({
+            method: "get",
+            url: "https://api.themoviedb.org/3/discover/movie",
+            params: {
+                api_key: "8ada0e1e64d9e1ebba75fff575bbbfc2",
+                language: "pt-BR",
+            },
+        }).then((res) => {
+            setMovies(res.data.results);
+        });
     };
 
     return (
@@ -52,16 +37,6 @@ function App() {
                     />
                 ))}
             </div>
-            {isLoading && (
-                <div className="loading">
-                    <span>Carregando...</span>
-                </div>
-            )}
-            {!isLoading && (
-                <button onClick={loadMoreMovies}>
-                    Carregar Mais
-                </button>
-            )}
         </>
     );
 }
